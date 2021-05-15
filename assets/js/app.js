@@ -5330,7 +5330,7 @@
             for (L = 0; L < this.colorBlockArray.length; L++) this.blockArray.push(this.colorBlockArray[L]);
             var ae = i(509)(k,this.blockArray);
             ae.setBlock(j),window.addEventListener("beforeunload",function(e){
-              !T.playerSpawned || b || E || (e.preventDefault(),e.returnValue = "")
+              /* Before Unload Warning --- !T.playerSpawned || b || E || (e.preventDefault(),e.returnValue = "")*/
             }),document.addEventListener("mousewheel",Ae,!1),document.addEventListener("DOMMouseScroll",Ae,!1),k.inputs.down.on("fire",function(){
               if (k.targetedBlock){
                 var e = {
@@ -9233,12 +9233,14 @@
       center = Math.floor(.5 * width),
       urlParams = new URLSearchParams(window.location.search),
       url = window.location.href.split("?")[0];
+    /* Host URL Change ---
     if (urlParams.has("size") && urlParams.delete("size"),urlParams.has("host")){
       var value = urlParams.get("host");
       urlParams.delete("host"),urlParams.append("join",value),url += "?" + urlParams.toString(),history.pushState && window.history.pushState({
         path: url
       },"",url)
     } else url = window.location.href;
+    */
     var copyTextarea = document.querySelector(".js-copytextarea");
     copyTextarea.value = url;
     var allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,.:-_'*!\\\"#%/()=+?[]{}<>@|$;",
@@ -11383,7 +11385,7 @@
       value: function(e,t){
         if ("URLSearchParams" in window){
           var i = new URLSearchParams(window.location.search);
-          i.set("host",t),history.pushState({},t,"?" + i.toString())
+          /* Host URL Change ---  i.set("host",t),history.pushState({},t,"?" + i.toString())*/
         }
       }
     }]) && l(t.prototype,i),h && l(t,h),e
@@ -63441,11 +63443,13 @@
         v = new URLSearchParams(window.location.search),
         y = window.location.href;
       v.has("size") && v.delete("size");
+      /* Host URL Change ---
       if (v.has("host")){
         y = window.location.href.split("?")[0];
         var b = v.get("host");
         v.delete("host"),v.append("join",b),y += "?" + v.toString()
       }
+      */
       document.querySelector(".js-copytextarea").value = y;
       var E = new Image;
       E.src = "assets/textures/button.png";
