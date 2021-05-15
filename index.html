@@ -3,9 +3,25 @@
 
 <head>
 
-<title>Minecraft Classic</title>
+<title>Minefork</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="author" content="Brandon Bennett">
+<meta name="description" content="A modern fork of classic.minecraft.net!">
+<meta property="og:title" content="Minefork">
+<meta property="og:description" content="A modern fork of classic.minecraft.net!">
+<!--meta property="og:url" content=""-->
+<meta name="theme-color" content="#008e46">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Minefork">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!--base href=""-->
+<!--link rel="canonical" href=""-->
+<link rel="manifest" href="manifest.webmanifest">
+<!--link rel="icon" type="image/svg+xml" href=""-->
+<link rel="icon" type="image/png" sizes="16x16" href="resources/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/icon-32.png">
+<!--link rel="apple-touch-icon" sizes="180x180" href=""-->
 <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -49,6 +65,10 @@
 </div>
 
 <script src="assets/js/app.js"></script>
+
+<script>
+  navigator.serviceWorker.register("service-worker.js");
+</script>
 
 </body>
 
