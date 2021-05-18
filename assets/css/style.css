@@ -112,9 +112,10 @@ svg:not(:root) {
 }
 #hotbar {
   margin-left: -92px;
+  margin-bottom: env(safe-area-inset-bottom,0px);
   position: fixed;
   left: 50%;
-  bottom: -6px;
+  bottom: 0;
   width: 184px;
   pointer-events: none;
   z-index: 2;

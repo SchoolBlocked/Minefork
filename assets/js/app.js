@@ -7036,7 +7036,9 @@
     this.isWebGLSupported = !1;
     var t = document.createElement("canvas"),
       i = t.getContext("webgl") || t.getContext("experimental-webgl");
-    i && i instanceof WebGLRenderingContext && (this.isWebGLSupported = !0),this.isMobile = !1,new RegExp("Android|webOS|iPhone|iPad|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile","i").test(navigator.userAgent) && (this.isMobile = !0)
+    i && i instanceof WebGLRenderingContext && (this.isWebGLSupported = !0);
+    this.isMobile = false;/* Enabled support for mobile devices, as now most of them are plenty powerful enough to run normal Minecraft */
+    //this.isMobile = /Android|webOS|iPhone|iPad|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
   }
 },function(e,t,i){
   "use strict";
@@ -63738,6 +63740,7 @@
       var r = document.getElementById("version");
       r.appendChild(i),r.style.width = 256 * t + "px",r.style.height = 34 * t + "px";
       var o = {
+        version: "Minefork v1.0",
         showFps: !1,
         fps: 0,
         chunkUpdates: 0,
@@ -63749,7 +63752,12 @@
             var e = 0 * t,
               i = 13 * t,
               r = 2 * t;
-            n.fillStyle = "rgb(63,63,63)",n.fillText("0.0.23a_01",e + r,i + r),o.showFps && n.fillText(o.fps + " fps," + o.chunkUpdates + " chunk updates",e + r,2 * i + 4 * t + r),n.fillStyle = "rgb(255,255,255)",n.fillText("0.0.23a_01",e,i),o.showFps && n.fillText(o.fps + " fps," + o.chunkUpdates + " chunk updates",e,2 * i + 4 * t),o.chunkUpdates = 0
+            n.fillStyle = "rgb(63,63,63)",n.fillText(o.version,e + r,i + r);
+            o.showFps && n.fillText(o.fps + " fps, " + o.chunkUpdates + " chunk updates",e + r,2 * i + 4 * t + r);
+            n.fillStyle = "rgb(255,255,255)";
+            n.fillText(o.version,e,i);
+            o.showFps && n.fillText(o.fps + " fps, " + o.chunkUpdates + " chunk updates",e,2 * i + 4 * t);
+            o.chunkUpdates = 0;
           }
         },
         resize: function(){
