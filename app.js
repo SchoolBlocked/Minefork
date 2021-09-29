@@ -2118,7 +2118,7 @@
                       e.next = 3;
                       break
                     }
-                    return console.log("no socket!"),e.abrupt("return");
+                    return /*console.log("no socket!"),*/e.abrupt("return");
                   case 3:
                     socket.addEventListener("message",function(e){
                       var t = JSON.parse(e.data),
@@ -2235,7 +2235,7 @@
                       e.next = 3;
                       break
                     }
-                    return console.log("no socket!"),e.abrupt("return");
+                    return /*console.log("no socket!"),*/e.abrupt("return");
                   case 3:
                     o = {
                       t: "u",
@@ -4960,7 +4960,7 @@
               x = A.get("size");
             if ("small" == x && (_ = 128),"normal" == x && (_ = 256),"huge" == x && (_ = 512),n.default.getInstance().gameSaved() ? _ = n.default.getInstance().getWorldSize() : n.default.getInstance().setWorldSize(_),"undefined" != typeof Worker){
               if (void 0 === S){
-                var S = new Worker("RandomLevelWorker.js");
+                var S = new Worker("random-level-worker.js");
                 S.postMessage({
                   worldSize: _,
                   seed: e.seed
@@ -4973,7 +4973,7 @@
                   from: T.client.state.changedBlocks.length
                 }) : Ee()))
               }
-            } else console.log("No worker support.");
+            }/* else console.log("No worker support.");*/
             var C = .5 * _,
               P = 8e3,
               R = 24e3,
@@ -5005,7 +5005,7 @@
                 backward: "S",
                 right: "D",
                 jump: "<space>",
-                build: "B",
+                build: "E",
                 chat: "T",
                 fog: "F",
                 saveLoc: "<enter>",
@@ -5351,7 +5351,7 @@
                 1 == e && (e = 3),U.pick(e),j = e - 1,ae.setBlock(j)
               }
             }),k.inputs.down.on("alt-fire",function(){
-              k.addMode ? k.addMode = !1 : (k.addMode = !0,ae.setBlock(j)),k.resetTargetBlock(),k.emit("targetBlockChanged",k.targetedBlock)
+              k.addMode = !0,k.inputs.down.emit("fire"),k.addMode = !1
             }),document.addEventListener("keydown",function(e){
               var t = e.keyCode;
               if (8 == t && e.preventDefault(),e.ctrlKey && e.preventDefault(),!z.isOpen && se)
@@ -5714,7 +5714,7 @@
             },this.updateChatLog = function(e){
               void 0 !== c && c.update(e)
             }
-          } else console.log("seed must be an integer.");
+          }/* else console.log("seed must be an integer.");*/
           function Ee(){
             ! function(){
               for (var e = 0; e < _; ++e)
@@ -7257,7 +7257,7 @@
           var i = this;
           return new e(function(e,n){
             a.a.getGame(t).then(function(t){
-              i.gameCode = t.code,console.log("got code " + i.gameCode),e(i.gameCode)
+              i.gameCode = t.code/*,console.log("got code " + i.gameCode)*/,e(i.gameCode)
             })
           })
         }
@@ -9459,7 +9459,7 @@
     };
     var h = BABYLON.MeshBuilder.CreateBox("leftArm",a,t);
     h.material = l;
-    var f = BABYLON.MeshBuilder.CreateBox("rightLeg",a,t);
+    var f = BABYLON.MeshBuilder.CreateBox("rightArm",a,t);
     f.material = l;
     var d = new BABYLON.StandardMaterial("leg",t);
     n = new BABYLON.Texture("textures/steveleg.png",t,!0,!1,BABYLON.Texture.NEAREST_SAMPLINGMODE);
@@ -18402,7 +18402,7 @@
                   },document.addEventListener("pointerlockchange",this._onPointerLockChange,!1),document.addEventListener("mspointerlockchange",this._onPointerLockChange,!1),document.addEventListener("mozpointerlockchange",this._onPointerLockChange,!1),document.addEventListener("webkitpointerlockchange",this._onPointerLockChange,!1),this._connectVREvents(c,O)
                 }!e.audioEngine && n.audioEngine && e.AudioEngineFactory && (e.audioEngine = e.AudioEngineFactory(this.getRenderingCanvas()));
                 for (var w = 0; w < this._caps.maxVertexAttribs; w++) this._currentBufferPointers[w] = new S;
-                this._prepareVRComponent(),n.autoEnableWebVR && this.initWebVR(),this._badOS = /iPad/i.test(navigator.userAgent) || /iPhone/i.test(navigator.userAgent),this._badDesktopOS = /^((?!chrome|android).)*safari/i.test(navigator.userAgent),console.log("Babylon.js v" + e.Version + " - " + this.description),this.enableOfflineSupport = void 0 !== e.OfflineProviderFactory
+                this._prepareVRComponent(),n.autoEnableWebVR && this.initWebVR(),this._badOS = /iPad/i.test(navigator.userAgent) || /iPhone/i.test(navigator.userAgent),this._badDesktopOS = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)/*,console.log("Babylon.js v" + e.Version + " - " + this.description)*/,this.enableOfflineSupport = void 0 !== e.OfflineProviderFactory
               }
             }
             return Object.defineProperty(e,"Instances",{
@@ -39784,7 +39784,7 @@
               n._defaultModel = e[1],n.attachToMesh(n._defaultModel),i && i(n._defaultModel)
             })
           },t.prototype._handleButtonChange = function(e,t,i){
-            console.log("Button id: " + e + "state: "),console.dir(t)
+            /*console.log("Button id: " + e + "state: "),*/console.dir(t)
           },t.MODEL_BASE_URL = "https://controllers.babylonjs.com/generic/",t.MODEL_FILENAME = "generic.babylon",t
         }(vi);
         Bt._DefaultControllerFactory = function(e){
@@ -59557,7 +59557,7 @@
     var o = function(e){
       var t = e._highlightMesh;
       if (!t){
-        var i = BABYLON.Mesh.CreateBox("highlight",1.005,e._scene),
+        var i = BABYLON.Mesh.CreateBox("highlight",0.001,e._scene),
           n = e.makeDynamicStandardMaterial("highlightMat");
         n.disableLighting = !0,n.backFaceCulling = !1,n.emissiveColor = new u(1,1,1),n.alpha = .2,i.material = n,t = e._highlightMesh = i;
         var r = .5,
@@ -60560,7 +60560,7 @@
       "mid-fire": "<mouse 2>",
       "alt-fire": "<mouse 3>",
       jump: "<space>",
-      build: "B",
+      build: "E",
       chat: "T",
       fog: "F",
       saveLoc: "<enter>",
@@ -63740,7 +63740,7 @@
       var r = document.getElementById("version");
       r.appendChild(i),r.style.width = 256 * t + "px",r.style.height = 34 * t + "px";
       var o = {
-        version: "Minefork v1.0",
+        version: "Minefork v1.01",
         showFps: !1,
         fps: 0,
         chunkUpdates: 0,
@@ -63907,7 +63907,7 @@
         stand_frame: "",
         jump_frame: "",
         direction: Math.random() * Math.PI * 2,
-        lifetime: 6e4,
+        lifetime: 60000,
         starttime: performance.now(),
         shouldRemove: !1
       },
