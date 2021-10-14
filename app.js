@@ -5211,7 +5211,7 @@
               volume: 1,
               pitch: 1
             },{
-              id: "grass",
+              id: "gravel",
               volume: .8,
               pitch: 1
             },{
@@ -5237,7 +5237,7 @@
             },{
               id: "grass",
               volume: 1,
-              pitch: .4
+              pitch: 1
             },null,null,null,{
               id: "stone",
               volume: 1,
@@ -9474,7 +9474,21 @@
     var p = BABYLON.MeshBuilder.CreateBox("leftLeg",a,t);
     p.material = d;
     var m = BABYLON.MeshBuilder.CreateBox("rightLeg",a,t);
-    m.material = d,h.setPivotPoint(new BABYLON.Vector3(0,.225,0)),f.setPivotPoint(new BABYLON.Vector3(0,.225,0)),p.setPivotPoint(new BABYLON.Vector3(0,.3375,0)),m.setPivotPoint(new BABYLON.Vector3(0,.3375,0)),s.parent = u,p.parent = u,m.parent = u,h.parent = u,f.parent = u,s.position = new BABYLON.Vector3(0,.5625,0),p.position = new BABYLON.Vector3(.1125,-.3375,0),m.position = new BABYLON.Vector3(-.1125,-.3375,0),h.position = new BABYLON.Vector3(.3375,.225,0),f.position = new BABYLON.Vector3(-.3375,.225,0);
+    m.material = d;
+    h.setPivotPoint(new BABYLON.Vector3(0,.225,0));
+    f.setPivotPoint(new BABYLON.Vector3(0,.225,0));
+    p.setPivotPoint(new BABYLON.Vector3(0,.3375,0));
+    m.setPivotPoint(new BABYLON.Vector3(0,.3375,0));
+    s.parent = u;
+    p.parent = u;
+    m.parent = u;
+    h.parent = u;
+    f.parent = u;
+    s.position = new BABYLON.Vector3(0,.565,0);
+    p.position = new BABYLON.Vector3(.1125,-.65,0);
+    m.position = new BABYLON.Vector3(-.1125,-.65,0);
+    h.position = new BABYLON.Vector3(.3375,0,0);
+    f.position = new BABYLON.Vector3(-.3375,0,0);
     var g = 0,
       _ = 0,
       v = 0;
@@ -63740,7 +63754,7 @@
       var r = document.getElementById("version");
       r.appendChild(i),r.style.width = 256 * t + "px",r.style.height = 34 * t + "px";
       var o = {
-        version: "Minefork v1.01",
+        version: "Minefork v1.02",
         showFps: !1,
         fps: 0,
         chunkUpdates: 0,

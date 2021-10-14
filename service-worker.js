@@ -1,5 +1,5 @@
 self.Minefork = {
-  version: 1.01
+  version: 1.02
 };
 self.addEventListener("activate",event => {
   event.waitUntil(caches.keys().then(versions => Promise.all(versions.map(cache => {
