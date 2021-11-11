@@ -63754,7 +63754,7 @@
       var r = document.getElementById("version");
       r.appendChild(i),r.style.width = 256 * t + "px",r.style.height = 34 * t + "px";
       var o = {
-        version: "Minefork v1.02",
+        version: "Minefork v1.03",
         showFps: !1,
         fps: 0,
         chunkUpdates: 0,
