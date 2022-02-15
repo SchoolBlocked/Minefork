@@ -1,10 +1,10 @@
 self.Minefork = {
-  version: 1.03,
+  version: `Minefork v${1.04}`,
   cache: true
 };
 self.addEventListener("activate",event => {
   event.waitUntil(caches.keys().then(versions => Promise.all(versions.map(cache => {
-    if (cache != Minefork.version) return caches.delete(cache);
+    if (cache.startsWith("Minefork") && cache !== Minefork.version) return caches.delete(cache);
   }))));
   event.waitUntil(clients.claim());
 });

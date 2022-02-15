@@ -3,7 +3,7 @@
   "short_name": "Minefork",
   "description": "A modern fork of classic.minecraft.net!",
   "start_url": "./",
-  "scope": ".",
+  "scope": "./",
   "display": "standalone",
   "theme_color": "#008e46",
   "background_color": "#262626",
@@ -24,7 +24,7 @@
       "sizes": "1024x1024"
     },
     {
-      "src": "resources/app-maskable.png",
+      "src": "resources/app-maskable-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
