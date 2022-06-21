@@ -1,2 +1,3 @@
-# MC-Classic
- 
+# Minefork
+
+A modern fork of classic.minecraft.net!
